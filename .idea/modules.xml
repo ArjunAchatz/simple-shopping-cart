@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ShoppingCart.iml" filepath="$PROJECT_DIR$/ShoppingCart.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple-shopping-cart.iml" filepath="$PROJECT_DIR$/simple-shopping-cart.iml" group="simple-shopping-cart" />
+      <module fileurl="file://$PROJECT_DIR$/app/simple-shopping-cart-app.iml" filepath="$PROJECT_DIR$/app/simple-shopping-cart-app.iml" group="simple-shopping-cart/app" />
+      <module fileurl="file://$PROJECT_DIR$/shoppingcart/simple-shopping-cart-shoppingcart.iml" filepath="$PROJECT_DIR$/shoppingcart/simple-shopping-cart-shoppingcart.iml" group="simple-shopping-cart/shoppingcart" />
     </modules>
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.phoenix.shoppingcart.db
 
 import android.database.Cursor
+import android.database.SQLException
 
 interface IStoreDatabase {
 
@@ -18,4 +19,7 @@ interface IStoreDatabase {
     val amount: Int
     fun fetchAllItems(status: String?): Cursor?
     fun insertMyShopItems()
+
+    // Remove later
+    fun open(): IStoreDatabase
 }

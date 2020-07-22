@@ -59,7 +59,8 @@ public class StoreDatabase implements IStoreDatabase {
         this.mContext = context;
     }
 
-    public StoreDatabase open() throws SQLException {
+    @Override
+    public IStoreDatabase open()  {
         mDbHelper = new DatabaseHelper(mContext);
         mDb = mDbHelper.getWritableDatabase();
         return this;

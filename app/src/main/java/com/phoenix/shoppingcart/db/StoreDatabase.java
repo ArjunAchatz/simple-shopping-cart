@@ -10,7 +10,7 @@ import android.util.Log;
 
 import java.sql.SQLException;
 
-public class StoreDatabase {
+public class StoreDatabase implements IStoreDatabase {
 
     public static final String KEY_ID = "_id";
     public static final String KEY_NAME = "name";
@@ -71,6 +71,7 @@ public class StoreDatabase {
         }
     }
 
+    @Override
     public long createItem(String name, String description, int price, String status) {
 
         ContentValues initialValues = new ContentValues();
@@ -82,6 +83,7 @@ public class StoreDatabase {
         return mDb.insert(SHOP_TABLE, null, initialValues);
     }
 
+    @Override
     public boolean deleteAllItems() {
 
         int doneDelete = 0;
@@ -90,12 +92,14 @@ public class StoreDatabase {
         return doneDelete > 0;
     }
 
+    @Override
     public int getCartItemsRowCount(int type){
         mDb = mDbHelper.getReadableDatabase();
         return (int) DatabaseUtils.queryNumEntries(mDb, SHOP_TABLE, "status= ? ", new String[]{Integer.toString(type)});
     }
 
-    public boolean addToCart (Integer id, String val){
+    @Override
+    public boolean addToCart(Integer id, String val){
         mDb = mDbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_STATUS, val);
@@ -104,6 +108,7 @@ public class StoreDatabase {
         return true;
     }
 
+    @Override
     public int getTotalItemsCount() {
         String countQuery = "SELECT  * FROM " + SHOP_TABLE;
         mDb = mDbHelper.getReadableDatabase();
@@ -113,6 +118,7 @@ public class StoreDatabase {
         return cnt;
     }
 
+    @Override
     public int getAmount() {
         mDb = mDbHelper.getReadableDatabase();
         Cursor cursor = mDb.rawQuery("SELECT SUM(" + KEY_PRICE + ") FROM " + SHOP_TABLE +" WHERE status=1", null);
@@ -123,6 +129,7 @@ public class StoreDatabase {
         return total;
     }
 
+    @Override
     public Cursor fetchAllItems(String status) {
 
         Cursor mCursor = mDb.query(SHOP_TABLE, new String[] {KEY_ID, KEY_NAME, KEY_DESCRIPTION, KEY_PRICE, KEY_STATUS},
@@ -133,6 +140,7 @@ public class StoreDatabase {
         return mCursor;
     }
 
+    @Override
     public void insertMyShopItems() {
         createItem("San Andreas (Special Edition DVD)", "Think of this movie as every disaster movie rolled into one. I enjoyed San Andreas a lot and they certainly managed to cram almost every survival scenario into one movie.\n" +
                 "\n" +

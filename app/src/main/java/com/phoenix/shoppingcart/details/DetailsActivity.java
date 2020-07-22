@@ -1,4 +1,4 @@
-package com.phoenix.shoppingcart;
+package com.phoenix.shoppingcart.details;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.phoenix.shoppingcart.MainActivity;
+import com.phoenix.shoppingcart.R;
+import com.phoenix.shoppingcart.db.StoreDatabase;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;

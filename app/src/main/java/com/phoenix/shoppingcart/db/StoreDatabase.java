@@ -1,4 +1,4 @@
-package com.phoenix.shoppingcart;
+package com.phoenix.shoppingcart.db;
 
 import android.content.ContentValues;
 import android.content.Context;

@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.phoenix.shoppingcart.db.StoreDatabase;
+import com.phoenix.shoppingcart.details.DetailsActivity;
+import com.phoenix.shoppingcart.shoppingcart.ShoppingCartActivity;
+
 import java.math.BigDecimal;
 import java.sql.SQLException;
 

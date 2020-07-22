@@ -1,4 +1,4 @@
-package com.phoenix.shoppingcart
+package com.phoenix.shoppingcart.store
 
 import android.content.Intent
 import android.database.Cursor
@@ -10,6 +10,7 @@ import android.widget.ListView
 import android.widget.SimpleCursorAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.phoenix.shoppingcart.R
 import com.phoenix.shoppingcart.db.IStoreDatabase
 import com.phoenix.shoppingcart.db.StoreDatabase
 import com.phoenix.shoppingcart.details.DetailsActivity

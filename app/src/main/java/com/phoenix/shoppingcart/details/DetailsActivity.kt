@@ -7,10 +7,9 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.phoenix.shoppingcart.MainActivity
+import com.phoenix.shoppingcart.store.MainActivity
 import com.phoenix.shoppingcart.R
 import com.phoenix.shoppingcart.db.IStoreDatabase
-import com.phoenix.shoppingcart.db.StoreDatabase
 import org.koin.android.ext.android.inject
 import java.math.BigDecimal
 import java.sql.SQLException

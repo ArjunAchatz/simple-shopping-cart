@@ -8,7 +8,7 @@ import android.widget.ListView
 import android.widget.SimpleCursorAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.phoenix.shoppingcart.MainActivity
+import com.phoenix.shoppingcart.store.MainActivity
 import com.phoenix.shoppingcart.R
 import com.phoenix.shoppingcart.db.IStoreDatabase
 import com.phoenix.shoppingcart.db.StoreDatabase

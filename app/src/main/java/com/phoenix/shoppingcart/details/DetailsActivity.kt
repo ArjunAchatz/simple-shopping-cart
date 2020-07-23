@@ -19,8 +19,6 @@ class DetailsActivity : AppCompatActivity() {
 
     private val viewModel by viewModel<DetailsViewModel>()
 
-    private val dbHelper by inject<IStoreDatabase>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var viewBinding = ActivityDetailsBinding.inflate(LayoutInflater.from(this))
@@ -31,7 +29,7 @@ class DetailsActivity : AppCompatActivity() {
         )
 
         viewModel.getUiModel().observe(this, Observer { renderUiModel(it, viewBinding) })
-        viewModel.getSingleEvents().observe(this, Observer { handleSingleEvent(it, viewBinding) })
+        viewModel.getSingleEvents().observe(this, Observer(::handleSingleEvent))
         viewModel.initialize(
             bundle.getString("name"),
             bundle.getString("description"),
@@ -50,10 +48,7 @@ class DetailsActivity : AppCompatActivity() {
         viewBinding.price.text = detailsUiModel.price
     }
 
-    private fun handleSingleEvent(
-        detailsSingleEvent: DetailsSingleEvent,
-        viewBinding: ActivityDetailsBinding
-    ) {
+    private fun handleSingleEvent(detailsSingleEvent: DetailsSingleEvent) {
         when (detailsSingleEvent) {
             DetailsSingleEvent.BuySuccessful -> {
                 val intent = Intent(this@DetailsActivity, MainActivity::class.java)
